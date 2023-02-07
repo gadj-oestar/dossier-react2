@@ -4,13 +4,11 @@ import "./InputSpinner.css";
 const InputSpinner = () => {
   const [count, setCount] = useState(0);
 
-  const onclickActivate = () => {
-    setCount(count + 1);
+  const onUpDate = (number) => {
+    setCount(count + number);
   };
 
-  const offclickActivate = () => {
-    setCount(count - 1);
-  };
+  
 
   return (
     <div className="InputSpinner horizontal">
@@ -18,7 +16,7 @@ const InputSpinner = () => {
         src="https://alikinvv.github.io/stepper/build/img/arrow.svg"
         className="arrow top"
         alt=""
-        onClick={offclickActivate}
+        onClick={(event) =>{onUpDate(-1  )}}
       />
       <div className="box">
         <div className="numbers1">{count}</div>
@@ -27,7 +25,7 @@ const InputSpinner = () => {
         src="https://alikinvv.github.io/stepper/build/img/arrow.svg"
         className="arrow bottom"
         alt=""
-        onClick={onclickActivate}
+        onClick={ (event)=>{ onUpDate(1)}}
       />
     </div>
   );
